@@ -10,6 +10,7 @@ import Footer from './components/Footer/Footer';
 // import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import {
   createBrowserRouter,
+  Outlet,
   RouterProvider,
 } from "react-router-dom";
 
@@ -17,7 +18,7 @@ const Layout = () => {
   return (
     <div className='app'>
       <NavBar /> 
-      <Home /> 
+      <Outlet /> 
       <Footer /> 
     </div>
   )
