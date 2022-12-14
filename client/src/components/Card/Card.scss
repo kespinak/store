@@ -1,9 +1,12 @@
+// * LOOK FOR GREEN COMMENTS FOR ERRORS
+
 .card {
   width: 280px;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-bottom: 50px;
+  // margin-bottom: 50px; // * THERE IS A PROBELM HERE...PAGE ISNT RESPONSIVE...
+  margin: 50px 50px;
 
   .image {
     width: 100%;
