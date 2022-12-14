@@ -76,11 +76,11 @@
       cursor: pointer;
       border: none;
       font-weight: 500;
+    }
     
-      .links {
-        display: flex;
-        gap: 20px
-      }
+    .links{
+      display: flex;
+      gap: 20px;
 
       .item {
         display: flex;
@@ -89,6 +89,7 @@
         color: #2879fe;
         font-size: 14px;
       }
+
     }
     
 
@@ -102,12 +103,15 @@
 
       hr {
         width: 200px;
-        border: 1px solid rgb(238 237 237)
+        border: 1px solid lightgray;
+        margin-left: 0;
       }
+
     }
 
     hr {
-      border: 1px solid rgb(238 237 237)
+      width: 100%;
+      border: 1px solid lightgray;
     }
   }
 }

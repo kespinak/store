@@ -1,6 +1,6 @@
 // * NOT LOADING IMAGE AT THE TOP LEFT ENGLISH FLAG
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.scss';
 import en from '../../assets/en.png';
@@ -11,7 +11,12 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 
+import Cart from '../Cart/Cart';
+
 const NavBar = () => {
+
+  const [open, setOpen] = useState(false);
+
   return (
     <div className='navbar'>
       <div className='wrapper' >
@@ -69,15 +74,18 @@ const NavBar = () => {
             <SearchOutlinedIcon />
             <PersonOutlineOutlinedIcon />
             <FavoriteBorderOutlinedIcon />
-            <div className='cartIcon'>
+
+            <div className='cartIcon' onClick={() => setOpen(!open)} >
               <ShoppingCartOutlinedIcon />
             </div>
+
           </div>
 
         </div>
       </div>
+      {open && <Cart /> }
     </div>
-  )
-}
+  );
+};
 
 export default NavBar;

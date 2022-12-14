@@ -49,13 +49,13 @@ const Product = () => {
           <AddShoppingCartIcon /> ADD TO CART
         </button>
 
-        <div className="link">
+        <div className="links" >
 
-          <div className="item">
+          <div className='item' >
             <FavoriteBorderIcon /> ADD TO WISHLIST
           </div>
 
-          <div className="item">
+          <div className='item' >
             <BalanceIcon /> ADD TO COMPARE
           </div>
 
