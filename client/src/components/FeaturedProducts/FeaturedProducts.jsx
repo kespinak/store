@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './FeaturedProducts.scss'
 import Card from '../Card/Card'
+import axios from 'axios';
 
 const FeaturedProducts = ({type}) => {
 
@@ -39,6 +40,29 @@ const FeaturedProducts = ({type}) => {
     },
   ];
 
+  const [products, setProducts] = useState([]);
+
+  /* * NOTE THAT WE CAN USE REACT QUERY OR SOME OTHER LIBRARY...BUT SINCE WE ARE ONLY FETCHING DATA AND WE ARE NOT GOING TO USE 
+  ANY POST METHODS...WE WILL KEEP IT SIMPLE AND JUST USE USEEFFECT HOOT TO FETCH DATA FROM THE BACKEND */
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await axios.get(
+          process.env.REACT_APP_API_URL + '/products',
+          {
+            headers: {
+              Authorization: 'bearer ' + process.env.REACT_APP_API_TOKEN,
+            },
+          }
+        );
+        console.log(data);
+      } catch(error) {
+        console.log(error);
+      }
+    };
+    fetchData();
+  }, []);
+
   return (
     <div className='featuredProducts'>
 
@@ -60,4 +84,4 @@ const FeaturedProducts = ({type}) => {
   )
 }
 
-export default FeaturedProducts
+export default FeaturedProducts;
