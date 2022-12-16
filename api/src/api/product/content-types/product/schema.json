@@ -40,7 +40,7 @@
         "audios"
       ]
     },
-    "price": {
+    "newPrice": {
       "type": "decimal"
     },
     "isNew": {
@@ -66,6 +66,9 @@
         "featured",
         "trending"
       ]
+    },
+    "oldPrice": {
+      "type": "decimal"
     }
   }
 }
